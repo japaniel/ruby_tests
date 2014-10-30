@@ -12,6 +12,15 @@ task :it_makes_a_dir do
 	mkdir_p @app_dir
 end	
 
+desc 'Checks for gems'
+task :check_for_gem, :gem do |task, args|
+    begin
+        gem "#{args[:gem]}"
+    rescue LoadError
+        puts "Don't gots no, #{args[:gem]}"
+    end
+end
+
 desc 'Build a Rails app'
 task :init_rails_app do
 	cd @app_dir
