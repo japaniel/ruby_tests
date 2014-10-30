@@ -33,4 +33,4 @@ task :clean do
 end
 
 desc 'All the things #SAFETYNET'
-task :all => [:default, :it_makes_a_dir, :init_rails_app]
+task :all => [:default, :it_makes_a_dir, :check_for_gem, :init_rails_app]
